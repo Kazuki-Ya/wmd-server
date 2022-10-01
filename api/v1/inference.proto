@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package inference.v1;
+
+option go_package = "github.com/Kazuki-Ya/api/log_v1";
+
+message Input_data_for_inference {
+    string text = 1;
+}
+
+message Output_data_for_inference {
+    string text = 1;
+    uint32 label = 2;
+}
+
+service Inference {
+    rpc InferenceCall(Input_data_for_inference) returns (Output_data_for_inference) {}
+}
