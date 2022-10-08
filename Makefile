@@ -8,3 +8,8 @@ compile:
 		--proto_path=.
 
 	python3 ./codegen.py
+
+.PHONY: test
+
+test : 
+	go test -race ./...
