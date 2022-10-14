@@ -3,8 +3,10 @@ module github.com/Kazuki-Ya/wmd-server
 go 1.19
 
 require (
+	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/hashicorp/serf v0.10.1
 	github.com/stretchr/testify v1.8.0
+	go.opencensus.io v0.23.0
 	go.uber.org/zap v1.23.0
 	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013
 	google.golang.org/grpc v1.49.0
@@ -14,6 +16,7 @@ require (
 require (
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/btree v0.0.0-20180813153112-4030bb1f1f0c // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
