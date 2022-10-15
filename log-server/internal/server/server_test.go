@@ -125,7 +125,7 @@ func testProduceConsume(t *testing.T, client api.LogClient, config *Config) {
 	ctx := context.Background()
 
 	want := &api.Record{
-		Text: "hello world",
+		Text: []byte("hello world"),
 	}
 	produce, err := client.Produce(
 		ctx,
@@ -156,7 +156,7 @@ func testConsumePastBoundary(
 
 	produce, err := client.Produce(ctx, &api.ProduceRequest{
 		Record: &api.Record{
-			Text: "hello world",
+			Text: []byte("hello world"),
 		},
 	})
 	require.NoError(t, err)
@@ -182,10 +182,10 @@ func testProduceConsumeStream(
 	ctx := context.Background()
 
 	records := []*api.Record{{
-		Text:   "first message",
+		Text:   []byte("first message"),
 		Offset: 0,
 	}, {
-		Text:   "second message",
+		Text:   []byte("second message"),
 		Offset: 1,
 	}}
 
