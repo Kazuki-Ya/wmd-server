@@ -14,7 +14,7 @@ func TestXxx(t *testing.T) {
 	dir, _ := os.MkdirTemp("", "segment-test")
 	defer os.RemoveAll(dir)
 
-	want := &api.Record{Text: "hello world"}
+	want := &api.Record{Text: []byte("hello world")}
 
 	c := Config{}
 	c.Segment.MaxStoreBytes = 1024
