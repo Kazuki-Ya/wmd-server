@@ -7,6 +7,7 @@ require (
 	github.com/hashicorp/raft v1.3.5
 	github.com/hashicorp/raft-boltdb v0.0.0-20211202195631-7d34b9fb3f42
 	github.com/hashicorp/serf v0.9.7
+	github.com/soheilhy/cmux v0.1.5
 	github.com/stretchr/testify v1.8.0
 	go.opencensus.io v0.23.0
 	go.uber.org/zap v1.23.0
