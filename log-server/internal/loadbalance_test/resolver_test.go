@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	api "github.com/Kazuki-Ya/wmd-server/api/v1"
-	"github.com/Kazuki-Ya/wmd-server/loadbalance"
+	"github.com/Kazuki-Ya/wmd-server/log-server/internal/loadbalance"
 	"github.com/Kazuki-Ya/wmd-server/log-server/internal/server"
 	"github.com/stretchr/testify/require"
 
