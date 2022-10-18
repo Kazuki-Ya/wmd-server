@@ -8,8 +8,8 @@ import (
 	"time"
 
 	api "github.com/Kazuki-Ya/wmd-server/api/v1"
+	"github.com/Kazuki-Ya/wmd-server/log-server/agent"
 	"github.com/Kazuki-Ya/wmd-server/log-server/dynaport"
-	"github.com/Kazuki-Ya/wmd-server/log-server/internal/agent"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
