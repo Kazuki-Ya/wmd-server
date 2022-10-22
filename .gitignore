@@ -1,2 +1,4 @@
 venv
 log-server/dynaport/
+__pycache__/
+.DS_Store
