@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Let's inference!</title>
+</head>
+<body>
+    <h2>AIに感情を分類させてみよう!</h2>
+    <p>下のフォームに文(英文)を入力すると、その文、怒り、愛、恐れ、喜び、悲しみ、驚き、のどれかに分類します。</p>
+
+    <form action="/inference?input_sentence=hello" method="get" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="input_sentence" placeholder="文を入力してください"/>
+        
+        <input type="submit" value="分類">
+    </form>
+</body>
+
+
+</html>
+
