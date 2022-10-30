@@ -62,7 +62,7 @@ func setupFlags(cmd *cobra.Command) error {
 	cmd.Flags().StringSlice("start-join-addrs",
 		nil,
 		"Serf addresses to join")
-	cmd.Flags().Bool("bootstrap", false, "Bootstrap the cluster")
+	cmd.Flags().Bool("bootstrap", true, "Bootstrap the cluster")
 
 	return viper.BindPFlags(cmd.Flags())
 }

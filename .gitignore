@@ -3,4 +3,4 @@ log-server/dynaport/
 __pycache__/
 .DS_Store
 test/
-model/
+inference-server/model/
