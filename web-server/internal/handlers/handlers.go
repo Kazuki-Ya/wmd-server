@@ -24,7 +24,7 @@ func Index(writer http.ResponseWriter, request *http.Request) {
 func Inference(writer http.ResponseWriter, request *http.Request) {
 	ctx := context.Background()
 	input_sentence := request.FormValue("input_sentence")
-	inferenceClient, err := InferenceClient()
+	inferenceClient, err := inferenceClient()
 	if err != nil {
 		log.Fatal("failed to create client")
 	}
@@ -46,7 +46,7 @@ func Inference(writer http.ResponseWriter, request *http.Request) {
 func Store(writer http.ResponseWriter, request *http.Request) {
 	ctx := context.Background()
 	sent_sentence := request.FormValue("failed_sentence")
-	logClient, err := LogClient()
+	logClient, err := logClient()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -59,10 +59,14 @@ func Store(writer http.ResponseWriter, request *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Fprintln(writer, response.Offset)
+	t, err := template.ParseFiles("./web-server/template/store.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	t.Execute(writer, response.Offset)
 }
 
-func LogClient() (api.LogClient, error) {
+func logClient() (api.LogClient, error) {
 	addr := "127.0.0.1:8400"
 
 	clientOptions := []grpc.DialOption{
@@ -79,7 +83,7 @@ func LogClient() (api.LogClient, error) {
 	return client, nil
 }
 
-func InferenceClient() (api.InferenceClient, error) {
+func inferenceClient() (api.InferenceClient, error) {
 	addr := "127.0.0.1:8403"
 
 	clientOptions := []grpc.DialOption{
